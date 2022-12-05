@@ -4,8 +4,6 @@ import os
 from azure.keyvault.secrets import SecretClient
 from azure.identity import DefaultAzureCredential
 
-#11/29/2021 MWC
-
 AZURE_KEY_VAULT_URL = os.environ["AZURE_KEY_VAULT_URL"]
 
 credential = DefaultAzureCredential()
@@ -15,7 +13,7 @@ _dbhostname = client.get_secret('HW10-DBHOSTNAME')
 _dbusername = client.get_secret('HW10-DBUSERNAME')
 _dbpassword = client.get_secret('HW10-DBPASSWORD')
 _dbname = client.get_secret('HW10-DBNAME')
-_secret = client.get_secret('HW10-SECRET-KEY')
+_secret = client.get_secret('SECRET-KEY')
 
 conn = pymysql.connect(
         host = _dbhostname.value, 
